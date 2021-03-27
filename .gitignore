@@ -1,1 +1,12 @@
 # This file specifies untracked files to be ignored in code versioning
+
+## Development
+.idea/
+venv/
+
+## Build
+__pycache__/
+build/
+dist/
+**.egg-info/
+**.pyc
