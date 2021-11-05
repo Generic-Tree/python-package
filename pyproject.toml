@@ -1,0 +1,12 @@
+# Development declarative configuration
+#
+# This file center configuration of several tools used throughout the whole development process life-cycle.
+# See https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/.
+
+
+[build-system]
+# A list of requirement specifiers for build-time dependencies
+requires = ['setuptools', 'wheel']
+
+# A string naming a Python object that will be used to perform the build
+build-backend = 'setuptools.build_meta'

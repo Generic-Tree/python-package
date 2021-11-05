@@ -1,0 +1,4 @@
+# Package dependence descriptor
+#
+# This file specifies other distributions required to be installed when package is.
+# See https://pip.pypa.io/en/stable/reference/requirements-file-format/.

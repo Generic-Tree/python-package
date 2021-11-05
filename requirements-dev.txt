@@ -1,0 +1,12 @@
+# Packing dependence descriptor
+#
+# This file specifies packages to be installed during development environment setup.
+# See https://pip.pypa.io/en/stable/reference/requirements-file-format/.
+
+
+-r requirements.txt
+build~=0.7
+pip~=22.0
+setuptools~=65.0
+twine~=4.0
+wheel~=0.37
