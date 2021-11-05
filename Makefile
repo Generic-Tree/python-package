@@ -25,6 +25,7 @@ SETUP_CFG = setup.cfg
 REQUIREMENTS_TXT ?= requirements-dev.txt
 
 # Executables definition
+GIT ?= git
 PYTHON ?= $(VENV_DIR)/bin/python3
 PIP = $(PYTHON) -m pip
 REMOVE = rm -fr
@@ -55,6 +56,10 @@ install:: uninstall ## Install on-developing package in current environment
 run:: ## Execute package main entry-point
 	$(PYTHON) -m $(PACKAGE_MODULE)
 
+release:: ## Tag commit with current version and push it, triggering release automation
+	$(GIT) tag $(PACKAGE_VERSION)
+	$(GIT) push origin $(PACKAGE_VERSION)
+
 TWINE_REPOSITORY=testpypi
 publish:: build ## Upload distribution archives to python package index
 	$(PYTHON) -m twine upload \
@@ -77,4 +82,4 @@ veryclean:: uninstall clean ## Delete all generated files
 
 .EXPORT_ALL_VARIABLES:
 .ONESHELL:
-.PHONY: help env init build install run publish uninstall clean veryclean
+.PHONY: help env init build install run release publish uninstall clean veryclean
