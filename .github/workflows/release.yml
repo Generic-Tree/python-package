@@ -1,0 +1,45 @@
+name: Release
+# This workflow releases a project version on GitHub and publishes the distribution files on PyPI
+# everytime a tag following semantic version syntax is pushed.
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up python version
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up project environment
+        run: make init
+
+      - name: Build distributable artifacts
+        run: make build
+
+      - name: Release project on Github
+        # Register a release on repository, versioning it according to tag and including artifacts
+        # See https://github.com/marketplace/actions/gh-release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: dist/*
+          fail_on_unmatched_files: true
+
+      - name: Publish package to PyPI
+        # Register package distributable files on PyPI or specified index
+        # See https://github.com/marketplace/actions/pypi-publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+          repository_url: https://test.pypi.org/legacy/
+          skip_existing: true

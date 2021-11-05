@@ -1,6 +1,6 @@
 # Packing declarative configuration
 #
-# This file specifies the build system should be used during packing process.
+# This file specifies the build system that should be used during packing process.
 # See https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/.
 
 
