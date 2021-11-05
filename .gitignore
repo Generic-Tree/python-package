@@ -1,4 +1,17 @@
 # VCS ignored files manifest
 #
-# This file specifies path patterns to be ignored when versioning code
-# See https://git-scm.com/docs/gitignore
+# This file specifies path patterns to be ignored when versioning code.
+# See https://git-scm.com/docs/gitignore.
+
+
+## Development
+.idea/
+venv/
+
+
+## Build
+__pycache__/
+**.pyc
+build/
+dist/
+**.egg-info

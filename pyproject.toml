@@ -1,0 +1,12 @@
+# Packing declarative configuration
+#
+# This file specifies the build system should be used during packing process.
+# See https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/.
+
+
+[build-system]
+# A list of requirement specifiers for build-time dependencies
+requires = ['setuptools', 'wheel']
+
+# A string naming a Python object that will be used to perform the build
+build-backend = 'setuptools.build_meta'
