@@ -1,5 +1,6 @@
 # Packing declarative configuration
 #
+# TODO: Review file description, since adictional tools also use it for configuration
 # This file specifies the build system that should be used during packing process.
 # See https://pip.pypa.io/en/stable/reference/build-system/pyproject-toml/.
 
@@ -10,3 +11,26 @@ requires = ['setuptools', 'wheel']
 
 # A string naming a Python object that will be used to perform the build
 build-backend = 'setuptools.build_meta'
+
+
+# Commitizen cli
+# See https://commitizen-tools.github.io/commitizen/config/#settings.
+[tool.commitizen]
+
+# Name of the committing rules to use
+name = 'cz_conventional_commits'
+
+# Current version
+version = "0.1.0"
+
+# Files where the version will be updated. A pattern to match a line, can also be specified, separated by `:`
+version_files = [
+    'pyproject.toml:version',
+    'setup.cfg:version'
+]
+
+# Create changelog when running `cz bump`
+update_changelog_on_bump = false
+
+# Update changelog with the missing versions.
+changelog_incremental = false

@@ -1,0 +1,16 @@
+# Pre-commit configuration descriptor
+#
+# This file declares git hooks to be installed and set up its usage
+# See https://pre-commit.com/#adding-pre-commit-plugins-to-your-project.
+
+
+# A list of `--hook-types` which will be used by default when running `pre-commit install`
+default_install_hook_types: [pre-commit, commit-msg]
+
+# The repository url to `git clone` from
+repos:
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v2.28.0
+    hooks:
+      - id: commitizen
+        stages: [commit-msg]

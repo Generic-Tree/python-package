@@ -36,6 +36,7 @@ init:: veryclean requirements.txt ## Configure development environment
 	$(PIP) install -r requirements.txt --upgrade
 	$(MAKE) install
 	$(PIP) freeze
+	pre-commit install --install-hooks --overwrite
 
 build:: clean ## Process source code into package distributable artifacts
 	$(PYTHON) -m build
