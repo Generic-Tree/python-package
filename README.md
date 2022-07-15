@@ -20,6 +20,7 @@ A straightforward beginning for an open-source python package project repository
 [>6]: https://github.com/marketplace/actions/pypi-publish "PyPA publish-on-push github action"
 [>7]: https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets "GitHub Docs: Secrets"
 [>8]: https://test.pypi.org/project/python-package/ "PyPI package page"
+[>9]: https://packaging.python.org/en/latest/guides/single-sourcing-package-version/ "Single-sourcing package version"
 
 [!1]: https://github.com/generic-tree/root/generate "Github repository's template generation URL"
 [!2]: https://pypi.org/manage/account/token/ "PyPI API token creation URL"
@@ -113,6 +114,7 @@ This project shortens a repository start setup, considering:
 It also powers up python packing workflow by:
 
 * Compliance with both [PyPA][>4] and [setuptools][>5] recommendations
+* Adopt a [single-source package versioning][>9] strategy
 * Inclusion of proficient `Makefile` that improves development management
 * Inclusion of appropriate `.gitignore` file
 * Commented references and instructions through configuration files
