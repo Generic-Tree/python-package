@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Feat
 - Structure package development start point
 - Adopt a single-source package versioning strategy
+- Configure cli formulation framework
 
 ### CI
 - Include release on tag workflow
