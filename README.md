@@ -16,6 +16,7 @@ A straightforward beginning for an open-source python package project repository
 [>3]: https://github.com/RichardLitt/standard-readme/blob/master/spec.md "Standard readme specification"
 [>4]: https://packaging.python.org/guides/distributing-packages-using-setuptools/ "PyPA packing instructions"
 [>5]: https://setuptools.pypa.io/en/latest/userguide/index.html "Setuptools packing instructions"
+[>6]: https://packaging.python.org/en/latest/guides/single-sourcing-package-version/ "Single-sourcing package version"
 
 [!1]: https://github.com/generic-tree/python-package/generate "Github repository's template generation URL"
 [!2]: https://pypi.org/manage/account/token/ "PyPI API token creation URL"
@@ -92,6 +93,7 @@ This project shortens a repository start setup, considering:
 It also powers up python packing workflow by:
 
 * Compliance with both [PyPA][>4] and [setuptools][>5] recommendations
+* Adopt a PEP 440-compliant [single-source package versioning][>6] strategy
 * Inclusion of proficient `Makefile` that improves development management
 * Inclusion of appropriate `.gitignore` file
 * Commented references and instructions through configuration files
@@ -109,8 +111,10 @@ It also powers up python packing workflow by:
 ├── requirements.txt            Packing dependence descriptor
 ├── setup.cfg                   Package declarative configuration
 └── src/
-    └── <package>               Python package root folder
-        └── __init__.py         Python package init script
+    ├── <package>               Python package root folder
+    │   └── __init__.py         Python package init script
+    └── utils                   Auxiliary functions module
+        └── version.py          PEP 440-compliant version management
 ```
 
 

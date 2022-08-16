@@ -11,7 +11,7 @@ GNUMAKEFLAGS += --no-print-directory
 # Project identification
 PACKAGE_MODULE ?= $(SOURCE_DIR).$(PACKAGE_DIR)
 PACKAGE_NAME ?= $(strip $(shell cat $(SETUP_CFG) | grep -Eo 'name = .*' | cut -d'=' -f2))
-PACKAGE_VERSION ?= $(strip $(shell cat $(SETUP_CFG) | grep -Eo 'version = .*' | cut -d'=' -f2))
+PACKAGE_VERSION ?= $(strip $(shell python3 -c 'import $(PACKAGE_MODULE) as pkg; print(pkg.__version__)'))
 
 # Path record
 REPO_DIR ?= $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
