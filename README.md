@@ -112,7 +112,8 @@ It also powers up python packing workflow by:
 ├── setup.cfg                   Package declarative configuration
 └── src/
     ├── <package>               Python package root folder
-    │   └── __init__.py         Python package init script
+    │   ├── __init__.py         Python package init script
+    │   └── __main__.py         Package main entry-point
     └── utils                   Auxiliary functions module
         └── version.py          PEP 440-compliant version management
 ```

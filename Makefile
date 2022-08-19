@@ -52,6 +52,9 @@ build:: clean ## Process source code into package distributable artifacts
 install:: uninstall ## Install on-developing package in current environment
 	$(PIP) install --editable .
 
+run:: ## Execute package main entry-point
+	$(PYTHON) -m $(PACKAGE_MODULE)
+
 TWINE_REPOSITORY=testpypi
 publish:: build ## Upload distribution archives to python package index
 	$(PYTHON) -m twine upload \
@@ -74,4 +77,4 @@ veryclean:: uninstall clean ## Delete all generated files
 
 .EXPORT_ALL_VARIABLES:
 .ONESHELL:
-.PHONY: help env init build install publish uninstall clean veryclean
+.PHONY: help env init build install run publish uninstall clean veryclean
