@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Structure package development start point
 - Adopt a single-source package versioning strategy
 - Define package main entry-point
+- Configure cement framework to CLI development
 
 ### CI
 - Include release on tag workflow
